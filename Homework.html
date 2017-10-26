@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<script>
+
+
+									<!-- Фибоначи рекурсия -->
+function fib(n) {
+
+	return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+
+console.log(fib(7))
+
+
+										<!--Фибоначи цикл -->
+
+function fibonachi(n) {
+	let a = 0, b = 1;
+	let c;
+		for(i = 0; i < n-1; i++) {
+			c = a + b;
+				a = b;
+				b = c;
+			}	
+		return c;
+			
+}
+
+console.log(fibonachi(7))
+
+										/*Write a function that retrive 2 arrays and return an array with 
+										numbers from the first array which aren't present in the second array;*/
+
+
+
+
+function compareArray(max) {
+	let a = [], b = [], c = [], q =[];
+		for (i = 0; i < max; i++) {
+			a[i] = Math.round(Math.random()*50)
+			
+		}
+	//console.log(a)
+		for (i = 0; i < max ; i++) {
+			b[i] = Math.round(Math.random() * 50)
+		}
+	//console.log(b)
+	    for( i = 0; i < max; i++){
+   			if (b.indexOf(a[i]) < 0) {
+				c.push(a[i]);
+   			}
+	
+	}
+	console.log("Итоговый массив :" + c)
+}
+compareArray(30)
+
+
+
+													/*NOD*/
+
+
+function NOD(A)
+{   
+	var n = A.length, x = Math.abs(A[0]);
+	for (var i = 1; i < n; i++){
+	  var y = Math.abs(A[i]);
+	   while (x && y){ x > y ? x %= y : y %= x; }
+	   x += y;
+	   //console.log(x)
+	 }
+
+	return x;
+	
+}
+ console.log("NOD " + NOD([8, 15]))
+
+
+
+ 													/*NOK*/
+
+function NOK(A)
+{   
+    var  n = A.length, a = Math.abs(A[0]);
+    for (var i = 1; i < n; i++)
+     { var b = Math.abs(A[i]), c = a;
+       while (a && b){ a > b ? a %= b : b %= a; } 
+       a = Math.abs(c*A[i])/(a+b);
+     }
+    return a;
+}
+console.log("NOK " + NOK([8,15]))
+
+
+
+														/*Факториал рекурсия*/
+
+
+function facR(n) {
+  return (n != 1) ? n * facR(n - 1) : 1;
+}
+
+console.log("Factorial " + facR(5) );
+
+
+
+
+														/*Фаакторил цикл*/
+
+
+function facC(n){
+ 	let r = 1
+	 	while (n) {
+	 		r *= n--
+	 	}
+	 	return r
+
+}
+console.log(facC(5))
+
+</script>
+</body>
+</html>
